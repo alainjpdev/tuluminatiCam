@@ -20,7 +20,7 @@ const store = {
       geometry: {
         type: "Point",
         // coordinates: [-77.034084142948, 38.909671288923],
-        coordinates: [propertiesMock.BuyHomes[0].address.lng,propertiesMock.BuyHomes[0].address.lat],
+        coordinates: [propertiesMock.BuyHomes[0].address.lng, propertiesMock.BuyHomes[0].address.lat],
 
         // coordinates: [propertiesMock.BuyHomes[0].address.lng,propertiesMock.BuyHomes[0].address.lat],
       },
@@ -36,15 +36,15 @@ const store = {
         postalCode: "20005",
         state: "D.C.",
       },
-      
-    } ,
+
+    },
     {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [propertiesMock.BuyHomes[1].address.lng,propertiesMock.BuyHomes[1].address.lat],
+        coordinates: [propertiesMock.BuyHomes[1].address.lng, propertiesMock.BuyHomes[1].address.lat],
         // coordinates: [-77.034084142948, 38.909671288923],
-    },
+      },
       properties: {
         phoneFormatted: "(202) 234-7336",
         phone: "2022347336",
@@ -57,15 +57,15 @@ const store = {
         postalCode: "20005",
         state: "D.C.",
       },
-      
+
     },
     {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [propertiesMock.BuyHomes[2].address.lng,propertiesMock.BuyHomes[1].address.lat],
+        coordinates: [propertiesMock.BuyHomes[2].address.lng, propertiesMock.BuyHomes[1].address.lat],
         // coordinates: [-77.034084142948, 38.909671288923],
-    },
+      },
       properties: {
         phoneFormatted: "(202) 234-7336",
         phone: "2022347336",
@@ -78,8 +78,8 @@ const store = {
         postalCode: "20005",
         state: "D.C.",
       },
-      
-    }         
+
+    }
   ],
 };
 
@@ -92,8 +92,9 @@ const MapboxComponent = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/light-v11",
-      center: [-87.46325,20.21173 ],
+      // style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/streets-v12",
+      center: [-87.46325, 20.21173],
       zoom: 10,
       scrollZoom: false,
     });
@@ -172,18 +173,18 @@ const MapboxComponent = () => {
     if (popUps[0]) popUps[0].remove();
     const popup = new mapboxgl.Popup({ closeOnClick: false })
       .setLngLat(currentFeature.geometry.coordinates)
-    //   .setHTML(`
-    //   <img
-    //   className="someImg"
-    //   src=${propertiesMock.BuyHomes[0].images}
-    //   alt="property picture"
-    // />
-    // <h6><strong>$${propertiesMock.BuyHomes[0].price}k</strong></h6>
-    // <h6><strong>${propertiesMock.BuyHomes[0].factsandfeatures.beds}</strong> bds |</h6>
-    // <h6><strong>${propertiesMock.BuyHomes[0].factsandfeatures.bath}</strong> ba </h6>
-    //   <h6>${currentFeature.properties.address}</h6>
-    //  `)
-     .setHTML(`<a href=/property/${propertiesMock.BuyHomes[0].id}> 
+      //   .setHTML(`
+      //   <img
+      //   className="someImg"
+      //   src=${propertiesMock.BuyHomes[0].images}
+      //   alt="property picture"
+      // />
+      // <h6><strong>$${propertiesMock.BuyHomes[0].price}k</strong></h6>
+      // <h6><strong>${propertiesMock.BuyHomes[0].factsandfeatures.beds}</strong> bds |</h6>
+      // <h6><strong>${propertiesMock.BuyHomes[0].factsandfeatures.bath}</strong> ba </h6>
+      //   <h6>${currentFeature.properties.address}</h6>
+      //  `)
+      .setHTML(`<a href=/property/${propertiesMock.BuyHomes[0].id}> 
       <img
       className="someImg"
       src={"https://res.cloudinary.com/dk473trop/image/upload/v1670333637/atikk/2015_R_AttikTulum_Ext01_id0glm.jpg"}
