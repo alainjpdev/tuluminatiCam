@@ -9,6 +9,8 @@ import Features from "../components/Features";
 import { propertiesMock } from "../src/constants";
 import MapboxComponent from "../components/Mapbox/Mapbox";
 import MapboxComponentTest from "../components/Mapboxtest";
+import Image from "next/image";
+import CardSection from "../components/CardSection";
 
 export default function Home({ propertiesVip, properties }) {
   const [estate, setEstate] = useState(true);
@@ -26,17 +28,23 @@ export default function Home({ propertiesVip, properties }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Layout>
-          <Carousel />
+          <Carousel/>
+          {/* <div className="fillit">
+          <Image src="/images/2.jpg" width={1080} height={600} alt="Logo" className="back"/>
+
+          </div> */}
           {/* <MapboxComponentTest/> */}
-          <MapboxComponent />
+          {/* <MapboxComponent /> */}
           <MDBContainer>
        
-            <PropertyVip properties={propertiesVip} />
+            {/* <PropertyVip properties={propertiesVip} /> */}
+          
 
-            <PropertySection
+            {/* <PropertySection
               properties={properties}
               handleDisplay={handleDisplay}
-            />
+            /> */}
+          <CardSection/>
           </MDBContainer>
          
         </Layout>

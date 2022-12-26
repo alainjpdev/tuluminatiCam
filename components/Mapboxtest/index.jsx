@@ -94,7 +94,7 @@ const MapboxComponentTest = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/streets-v12",
       center: [-87.46325, 20.21173],
       zoom: 10,
       scrollZoom: false,
